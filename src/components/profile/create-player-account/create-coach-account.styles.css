@@ -1,0 +1,38 @@
+.playerReg {
+  text-align: center;
+  background-color: #F3FAF6;
+  height: 100vh;
+  font-family: 'Flutter';
+  text-align: center;
+}
+
+.playerReg h2 {
+   font-weight: 400;
+   padding-top: 1rem;
+   font-size: 25px;
+}
+
+.playerReg .form-input {
+    background-color: #BFE7C7;
+    border-radius: 20px;
+    margin-top: 1rem;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.image2 {
+    margin-top: 6rem;
+    padding-left: 1rem;
+    width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 767px) {
+    .image2 {
+        display: none;
+    }
+    .playerReg {
+  height: 100vh;
+}
+    
+}
+                            

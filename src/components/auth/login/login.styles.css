@@ -1,0 +1,60 @@
+.signup1 {
+  background-color: #00a01e;
+  height: 100vh;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.signup1 p {
+  font-family: 'Flutter', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 3rem;
+  font-size: 20px;
+}
+.form {
+    display: block;
+    text-align: center;
+}
+
+.signup2 {
+  text-align: center;
+  background-color: #fff;
+  font-family: 'Flutter', sans-serif;
+}
+.signupp {
+  font-family: 'Roboto', sans-serif;
+  color: #606060;
+  text-align: center;
+}
+
+.signup2 h2 {
+  font-weight:400;
+  margin-top: 2rem;
+}
+.foot {
+  text-align: center;
+}
+h4 {
+    color: "#595959";
+    margin-top: "1rem";
+    font-size: 15px;
+    text-align: "center";
+    font-family: "Flutter";        
+}
+
+@media screen and (min-width: 1023px) {
+    .form-group {
+        margin-left: 6rem;
+    }
+}
+@media screen and (max-width:750px ) {
+    .signup1 {
+        display: none;
+    }
+}
+@media screen and (max-width: 320px) {
+    .image {
+        height: 4rem;
+        width: 15rem;
+    }
+}

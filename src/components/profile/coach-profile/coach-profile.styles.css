@@ -1,0 +1,165 @@
+.profile-container {
+  margin: 0 0;
+}
+.player {
+  background-image: url('../../../assets/img/coachdashheader.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+.coachheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  top: 7rem;
+  
+}
+.coachimg {
+  border-radius: 50%;
+  position: relative;
+  /* top: 7rem; */
+  left: 4rem;
+  z-index: 0;
+  height: auto;
+  width: 50%;
+  max-width: fit-content;
+  object-fit: scale-down;
+}
+.profile-btn {
+font-weight: 400;
+font-size: 20px;
+padding: 10px 3rem;
+border-radius: 30px;
+position: relative;
+right: 10%;      
+top: 9rem;         
+align-items: flex-end;     
+}
+.coachdashheader {
+  background: #ffffff;
+}
+.coachdashheader h2 {
+  font-family: 'Flutterwave', sans-serif;
+  font-weight: 400;
+}
+.posts a {
+  text-decoration: none;
+  color: #979696;
+  font-family: 'Flutter', sans-serif;
+  font-weight: 400;
+  width: auto;
+}
+.posts a:hover {
+  color: #00a01e;
+  text-decoration: none;
+  cursor: pointer;
+}
+.post {
+  width: 300px;
+  flex-shrink: 0;
+  height: 100%;
+}
+.slider {
+  display: flex;
+  overflow-x: auto;
+  justify-content: space-evenly;
+}
+.slide {
+  width: auto;
+  flex-shrink: 0;
+  height: 100%;
+  text-decoration: none;
+  color: #979696;
+  height: 100%;
+  cursor: pointer;
+}
+
+.profile-content {
+  position: relative;
+  top: 25rem;
+}
+.profile-content h2 {
+  margin-left: 5rem;
+}
+.profile-content p {
+  margin-left: 5rem;
+  color: #979696;
+}
+
+@media  screen and (max-width: 680px) {
+  .player {
+  padding-bottom: 3rem;
+}
+.profile-content {
+  top: 15rem;
+  scroll-snap-align: start;
+}
+  .coachimg {
+    top: 0;
+    left: 2rem;
+    height: auto;
+    width: 30%;
+  }
+  .profile-btn {
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px 10px;
+    right: 2rem;      
+    top: 5px;      
+    margin-top: 3.5rem;   
+    align-self: baseline;  
+}
+.profile-content h2 {
+  margin-left: 1rem;
+  
+}
+.profile-content p {
+  margin-left: 1rem;
+}
+.posts .post h3{
+  font-size: 15px;
+}
+}
+@media  screen and (max-width: 320px) {
+  .player {
+  height: 20%;
+}
+.coachimg {
+    top: -30px;
+    height: 20%;
+    width: 20%;
+  }
+  .profile-btn {
+    font-size: 10px;
+    padding: 5px 10px;     
+    top: -50px;      
+}
+@media  screen and (max-width: 280px) {
+
+}
+.coachimg {
+    top: -10px;
+  }
+  .profile-btn {     
+    top: -30px;      
+}
+.profile-content {
+  top: 12rem;
+}
+.profile-content h2 {
+  font-size: 20px;
+}
+.profile-content p {
+  font-size: 12px;
+}
+.posts .post h3{
+  font-size: 13px;
+}
+
+
+}

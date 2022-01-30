@@ -1,0 +1,90 @@
+.header {
+  display: inline-flex;
+}
+
+.header-buttons {
+  position: fixed;
+  right: 20px;
+}
+.interview-card {
+  border-radius: 20px;
+  width: auto;
+  max-width: 40rem;
+  margin: 1.5rem 0;
+}
+.interview-card-body {
+  display: flex;
+}
+.interview-body {
+  font-family: Flutter;
+}
+.interview-btn {
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 5px 2rem;
+  color: #70c980;
+  background-color: #f3faf6;
+  margin-top: 25%;
+  margin-left: 3rem;
+}
+.content {
+  text-align: left;
+  height: 100vh;
+}
+.interview-image {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 2rem;
+}
+.header-3 {
+  display: flex;
+  color: #00a01e;
+  font-family: Flutter;
+  text-align: left;
+}
+.header-3 img {
+  height: 30px;
+  width: 30px;
+  margin-right: 20rem;
+  margin-left: 1rem;
+}
+.header-3 h4 {
+  color: #979696;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 660px) {
+  .interview-card {
+    margin: 1.5rem 1rem;
+  }
+  .header-3 {
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .interview-card-body {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .interview-image {
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+  .interview-btn {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+  .content {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .interview-btn {
+    padding: 5px 1rem;
+  }
+}

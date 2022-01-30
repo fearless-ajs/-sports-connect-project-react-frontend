@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { connect } from 'react-redux';
+import { createStructuredSelector } from "reselect";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { checkUserSession } from "./redux/user/user.actions";
+
+
+// Stylesheet
+import './App.css';
+import AppWrapper from "./AppWrapper.component";
+import PageSpinner from "./components/spinners/page-spinner.component";
+import { selectIsCurrentSettingFetching } from "./redux/setting/setting.selectors";
+import {selectCurrentUser, selectCurrentUserFetchingStatus} from "./redux/user/user.selectors";
+
+const AppWrapperWithPageSpinner = PageSpinner(AppWrapper)
+
+const App = ({ checkUserSession, isCurrentUserFetching, isSettingFetching }) => {
+
+    useEffect(async () => {
+        await checkUserSession();
+    }, [checkUserSession]);
+
+    return (
+        <div>
+            <AppWrapperWithPageSpinner isLoading={!!(isCurrentUserFetching || isSettingFetching)} />
+        </div>
+    );
+
+
 }
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+    isSettingFetching: selectIsCurrentSettingFetching,
+    isCurrentUserFetching: selectCurrentUserFetchingStatus
+});
+
+const mapDispatchToProps = dispatch => ({
+    checkUserSession: () => dispatch(checkUserSession()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(App);

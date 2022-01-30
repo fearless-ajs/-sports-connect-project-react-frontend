@@ -1,0 +1,275 @@
+
+.firstbox {
+  background-color: #F3FAF6;
+  height: auto;
+  padding-bottom: 9rem;
+}
+
+.firsttext {
+  position: relative;
+  top: 100px;
+}
+
+.firsttext > h1 {
+  color: #22ac3c;
+  font-family: "Flutterwave", sans-serif;
+  font-size:40px;
+  line-height: 50px;
+}
+
+.firsttext > p {
+  font-family: "Flutter", sans-serif;
+  color: #787373;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.secondbox {
+  /* height: 500px; */
+  background-color: #dbefe3;
+ 
+}
+
+.secondh1 {
+  margin-top: 60px;
+  font-weight: 400;
+  font-family: 'Flutter' sans-serif;
+}
+.clubs {
+  margin-top: 4rem;
+}
+.club {
+  background-color: #F3FAF6;
+  font-family: "Flutter", sans-serif;
+  color: #000;
+  font-weight: 400;
+  width: 100%;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 20px;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 13px 0;
+}
+
+.secondbutton{
+  margin: auto;
+  margin-top: 4em;
+  margin-left: 2rem;
+  margin-right: 3rem;  
+  text-align: center;
+}
+.secondbutton #secondText {
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Flutter';
+}
+
+.thirdbox {
+  height: auto;
+  background-color: #404040;
+}
+
+.thirdh1 {
+  color: white;
+  font-family: 'Flutterwave';
+  /* position: relative;
+  top: 50px; */
+}
+
+.thirddiv {
+  padding: 50px 0;
+}
+
+.fourthbox {
+  height: stretch;
+  background-color: #00a01e;
+  min-height: fit-content;
+}
+
+.fourthh1 {
+  font-family: 'Flutterwave';
+  color: #000801;
+}
+
+.fourthp {
+  color: #eae5e4;
+  font-size: 25px;
+  font-family: 'Flutter';
+}
+
+.fourthtext {
+  position: relative;
+  top: 50px;
+}
+
+.fifthbox {
+  background-color: #f3faf4;
+  /* height: 700px; */
+  margin: auto;
+  font-family: 'Flutterwave';
+}
+
+.fifthbutton {
+  position: relative;
+  bottom: 25px;
+}
+
+.fifthh1 {
+  position: relative;
+  top: 25px;
+}
+
+.fifthdiv {
+  padding: 10px;
+}
+
+.sixthbox {
+  background: rgb(2, 154, 32);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 154, 32, 1) 22%,
+    rgba(17, 111, 41, 1) 52%,
+    rgba(27, 81, 49, 1) 83%
+  ); 
+}
+
+#sixthh1 {
+  font-family: 'Flutterwave';
+  color: #121a1a;
+  word-spacing: 3px;
+  font-weight: 400;
+  
+}
+
+#sixthp {
+  color: #d3e4d7;
+  margin-top: 1.5rem;
+  font-family: 'Flutter';
+}
+
+.sixthbox iframe {
+  height: auto;
+  margin-top: 5rem;
+}
+.seventhbox {
+  background-image: url('../../assets/img/rectangle29.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  object-fit: center;
+  height:auto;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.seventhbox  h2 {
+  font-family: 'Flutterwave', sans-serif;
+  font-weight: 400;
+  margin-top: 30px;
+  word-spacing: 5px;
+}
+.footer {
+  background: #000000;
+  height: auto;
+  
+}
+.dropdown {
+  width: 50%;
+  margin-top: 3rem;
+}
+.foot1 {
+  display: flex;
+  padding-top: 5rem;
+  justify-content: space-evenly;
+}
+/* .footer .btn {
+  margin-left: 10px;
+} */
+.socials {
+  display: flex;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Flutter';
+}
+.socials a{
+  margin-right: 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a:hover {
+  color: #00a01e;
+  text-decoration: none;
+}
+.socials span {
+  font-weight: 500;
+  font-size: 25px;
+}
+select{
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 5px;
+    height: 34px;
+    color: #fff;
+    background: #000;
+    border: 1px solid #fff;
+    -webkit-appearance: #fff;
+    background-position-x: 244px;
+}
+
+.footcontents {
+  /* margin-top: 8rem; */
+  color: #fff;
+  font-family: 'Flutter', sans-serif;
+}
+.footcontents h1 {
+  font-family: 'Flutterwave', sans-serif;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-size: 25px;
+}
+.footcontents a {
+  font-family: 'Flutter', sans-serif;
+  text-decoration: none;
+  color: #fff;
+}
+.footcontents a:hover {
+  text-decoration: none;
+  color: #00a01e;
+}
+.footcontents a h3 {
+  font-weight: 400;
+  font-size: 15px;
+}
+.footcontent {
+  width: auto;
+}
+.footer #foottext {
+  text-align: center;
+  color: #606060;
+  margin-top: 1rem;
+  font-family: 'Flutter';
+}
+@media screen and (max-width: 767px) {
+  .firstimg {
+    margin-top: 3rem;
+  }
+  .secondbutton {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .foot1 {
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-column-gap: 1rem;
+    margin-left: 3rem;
+  }
+}

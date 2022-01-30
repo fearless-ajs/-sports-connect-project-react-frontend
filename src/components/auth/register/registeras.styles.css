@@ -1,0 +1,97 @@
+.playerorcoach {
+  background-color: #F3FAF6;
+  height: auto;
+  text-align: center;
+  height: 100vh;
+}
+.playerorcoach h3{
+  font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+}
+.container2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+.btn2 {
+    width: 30%;
+    align-self: center;
+    font-weight: 400;
+    margin-top: 3.3rem;
+    font-size: 20px;
+    padding: 7px 5px;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #00A01E;
+    text-align: center;
+    font-family: Flutter;
+    border: none;
+}
+.btn:hover {
+    color: #000;
+}
+
+.player-img {
+    margin-top: 5rem;
+    align-self: center;
+    height: 22rem;
+    width: 35rem;
+}
+.coach-img {
+    align-self: center;
+    margin-top: 1rem;
+    height: 27rem;
+    width: 30rem;
+    margin-left: 30%;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #D1ECDC;
+  height: 25rem;
+  margin-top: 5rem;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F3FAF6;
+  border: 1px solid #D1ECDC;
+  border-radius: 50%;
+  padding:18px 18px;
+  font-family: 'Flutter';
+}
+
+@media screen and (max-width: 620px) {
+    .container2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+    .vl {
+    display: none;
+    }
+    .playerorcoach {
+        height: 100vh;
+}
+.btn {
+    margin-bottom: 1rem;
+}
+.coach-img {
+    margin-left: 30%;
+}
+.player-img {
+    margin-left: 10%;
+}
+}
