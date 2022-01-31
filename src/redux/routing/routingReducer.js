@@ -1,4 +1,6 @@
 import { RoutingActionTypes } from "./routing.types";
+import { UserActionTypes } from "../user/user.types";
+
 const INITIAL_STATE = {
     currentRoute: null,
     lastAttemptedRoute: null,
@@ -21,6 +23,11 @@ const routingReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 lastAttemptedRoute: action.payload
+            }
+        case UserActionTypes.SIGN_OUT_SUCCESS:
+            return {
+                ...state,
+                lastAttemptedRoute: null,
             }
         default:
             return state;

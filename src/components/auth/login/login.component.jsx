@@ -138,15 +138,11 @@ const LogInComponent = ({ signInStart, loginError, sessionError, isLoading }) =>
                     </Form.Group>
                   </Form>
                 </div>
-                <div className="foot">
-                  <h4>or Sign In Using</h4>
+                <div className="foot" style={{ marginTop:"20px" }}>
+                  <h4>Forgot password</h4>
+                    <Link to={'/reset-password'}>Reset here</Link>
                   <div className="socialicon">
-                    <a href="/#" style={{ marginRight: "0.5rem" }}>
-                      <Image src={icon1} />
-                    </a>
-                    <a href="/#" style={{ marginLeft: "0.5rem" }}>
-                      <Image src={icon3} />
-                    </a>
+
                   </div>
                   <h4
                     style={{

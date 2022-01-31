@@ -2,8 +2,14 @@ import React from "react";
 import chatlogo from "../../../assets/img/chitchaticon.png";
 import notification from "../../../assets/img/notificationicon.png";
 import coachimg from "../../../assets/img/coachimg.png";
+import {createStructuredSelector} from "reselect";
+import {selectCurrentUser} from "../../../redux/user/user.selectors";
+import { connect } from "react-redux";
+import history from "../../../history";
+import System from "../../../backend/System";
 
-function CoachFeedsTopRightNavBar() {
+
+function CoachFeedsTopRightNavBar({ currentUser }) {
   return (
       <div className="navbaritems2">
         <img
@@ -23,12 +29,16 @@ function CoachFeedsTopRightNavBar() {
           />
         </a>
         <img
-          src={coachimg}
-          alt=""
+          onClick={() => history.push('/coach-profile')}
+          src={System.userImagePath(currentUser.user.image)}
+          alt="User photo"
           className="profile-photo"
         />
       </div>
   );
 }
 
-export default CoachFeedsTopRightNavBar;
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+});
+export default connect(mapStateToProps)(CoachFeedsTopRightNavBar);

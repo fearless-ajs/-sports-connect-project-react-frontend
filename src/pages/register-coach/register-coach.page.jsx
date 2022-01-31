@@ -1,5 +1,5 @@
 import React from "react";
-import CreateCoachAccountComponent from "../../components/profile/create-player-account/create-coach-account.component";
+import CreateCoachAccountComponent from "../../components/profile/create-coach-account/create-coach-account.component";
 
 const RegisterCoachPage = () => {
     return (

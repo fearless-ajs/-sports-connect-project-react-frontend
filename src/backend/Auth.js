@@ -11,6 +11,20 @@ class Auth extends Api{
         },{ withCredentials: true });
     }
 
+    verifyResetPasswordEmail = async (email) => {
+        return await axios.post(`${this.endPoint()}/users/reset-password`,{
+            email
+        },{ withCredentials: true });
+    }
+
+    chooseNewPassword = async (resetToken, password, passwordConfirm) => {
+        return await axios.patch(`${this.endPoint()}/users/reset-password/${resetToken}`,{
+            password,
+            passwordConfirm
+        },{ withCredentials: true });
+    }
+
+
     verifyAccount = async token => {
         return await axios.get(`${this.endPoint()}/users/verify-user/v-token/${token}`,{ withCredentials: true });
     }

@@ -16,10 +16,17 @@ import SelectAccountComponent from "./components/auth/register/registeras.compon
 import RegisterPlayerPage from "./pages/register-player/register-player.page";
 import RegisterCoachPage from "./pages/register-coach/register-coach.page";
 import PlayerProfilePage from "./pages/player/player-profile/player-profile.page";
+import UpdatePlayerProfilePage from "./pages/player/update-player-profile/update-player-profile.page";
+import CoachProfilePage from "./pages/coach/coach-profile/coach-profile.page";
+import UpdateCoachProfilePage from "./pages/coach/update-coach-profile/update-coach-profile.page";
 import FeedsPage from "./pages/feeds/feeds.page";
+
+import ResetPasswordPage from "./pages/reset-password/reset-password.page";
+import ChoosePasswordPage from "./pages/reset-password/choose-password.page";
 import GuestRoute from "./components/auth/routes/guest-route";
 import AuthRoute from "./components/auth/routes/auth-route";
 import PlayerRoute from "./components/auth/routes/player-route";
+import CoachRoute from "./components/auth/routes/coach-route";
 
 const AppWrapper = ({ currentUser, history }) => {
     return (
@@ -30,16 +37,19 @@ const AppWrapper = ({ currentUser, history }) => {
             <GuestRoute exact path="/signup" component={RegisterPage} />
             <GuestRoute exact path="/login" component={LogInPage} />
             <GuestRoute exact path="/verifyAccount/:token" component={VerifyEmailPage} />
+            <GuestRoute exact path="/reset-password" component={ResetPasswordPage} />
+            <GuestRoute exact path="/choose-password/:resetToken" component={ChoosePasswordPage} />
 
             <AuthRoute exact path="/select-account" component={SelectAccountComponent} />
             <AuthRoute exact path="/register-player" component={RegisterPlayerPage} />
             <AuthRoute exact path="/register-coach" component={RegisterCoachPage} />
 
-            {/*<CoachRoute exact path="/coach-profile" component={CoachProfile} />*/}
-            {/*<CoachRoute exact path="/update-coach-profile" component={UpdateCoachProfile} />*/}
+            <CoachRoute exact path="/coach-profile" component={CoachProfilePage} />
+            <CoachRoute exact path="/update-coach-profile" component={UpdateCoachProfilePage} />
+            {/*<CoachRoute exact path="/talent-pool" component={InterviewScreen} />*/}
 
             <PlayerRoute exact path="/player-profile" component={PlayerProfilePage} />
-            {/*<PlayerRoute exact path="/update-player-profile" component={UpdatePlayerProfile} />*/}
+            <PlayerRoute exact path="/update-player-profile" component={UpdatePlayerProfilePage} />
 
             <AuthRoute exact path="/feeds" component={FeedsPage} />
 
