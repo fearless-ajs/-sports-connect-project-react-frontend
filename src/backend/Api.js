@@ -4,7 +4,7 @@ class Api{
         if (process.env.NODE_ENV === 'development') {
             this.serverLink = 'http://127.0.0.1:5000'
         }else {
-            this.serverLink = 'https://sportspadi.com'
+            this.serverLink = 'https://api.sportspadi.com'
         }
     }
 

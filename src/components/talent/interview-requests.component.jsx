@@ -2,9 +2,9 @@ import React from 'react';
 import { Container, Card, Button, Form, Navbar } from "react-bootstrap";
 import coachimg from "../../assets/img/coachimg.png";
 import NavBar from "../navbar/feeds-top-navbar/feeds-top-navbar.components"
-import './interview.styles.css'
+import './interview-requests.styles.css'
 
-const Interview = () => {
+const InterviewRequestsComponent = () => {
   return (
     <div>
       <NavBar />
@@ -79,4 +79,4 @@ const Interview = () => {
   );
 };
 
-export default Interview;
+export default InterviewRequestsComponent;
