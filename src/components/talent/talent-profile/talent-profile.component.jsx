@@ -1,19 +1,19 @@
 import React, {useState} from "react";
 import { Row, Container, Col, Button, Image } from "react-bootstrap";
-import playerimg from "../../../assets/img/playerimg.png";
-import './coach-profile.styles.css'
-import {createStructuredSelector} from "reselect";
-import {selectCurrentUser} from "../../../redux/user/user.selectors";
-import {signOutStart} from "../../../redux/user/user.actions";
-import {selectCurrentCoach} from "../../../redux/coach/coach.selectors";
+import './talent-profile.styles.css'
 import {Link, withRouter} from "react-router-dom";
 import {connect} from "react-redux";
+import {selectCurrentUser} from "../../../redux/user/user.selectors";
+import {selectCurrentPlayer} from "../../../redux/player/player.selectors";
+import {createStructuredSelector} from "reselect";
 import System from "../../../backend/System";
+import {signOutStart} from "../../../redux/user/user.actions";
+import history from "../../../history";
 import UserCreatedPostsComponent from "../../feeds/user-created-posts/user-created-posts.component";
-import AboutUserComponent from "../about-player/about-player.component";
+import AboutUserComponent from "../../profile/about-player/about-player.component";
 
-const CoachProfileComponent = ({ currentUser, currentCoach, signOutStart, history }) => {
-    const { user } = currentUser;
+const TalentProfileComponent = ({ player }) => {
+    const { user } = player;
 
     const [userPosts, setUserPosts] = useState(true);
     const [aboutUser, setAboutUser] = useState(false);
@@ -30,6 +30,7 @@ const CoachProfileComponent = ({ currentUser, currentCoach, signOutStart, histor
     const logout = () => {
         signOutStart()
     }
+
     return (
         <div className="profile">
             <div>
@@ -39,10 +40,10 @@ const CoachProfileComponent = ({ currentUser, currentCoach, signOutStart, histor
                             <Image src={System.userImagePath(user.image)} className="coachimg" style={{ maxWidth: "15%" }} />
                             <Button
                                 className="profile-btn"
-                                onClick={() => history.push('/update-coach-profile')}
+                                onClick={() => history.push('/book-talent')}
                                 variant="outline-success custom"
                             >
-                                Edit Profile
+                                Book Talent
                             </Button>
                         </div>
                     </Container>
@@ -53,11 +54,11 @@ const CoachProfileComponent = ({ currentUser, currentCoach, signOutStart, histor
                             <Col>
                                 <h2>{user.name.toUpperCase()}</h2>
                                 <p>
-                                    Experienced Football Coach, Club:
+                                    Talented Football Player, favorite Wing:
                                     <span style={{ display: "block" }}>
-                           {currentCoach.club}. Born, {currentCoach.dateOfBirth} in {currentCoach.state}
+                           {player.favoriteWingNo}. Born, {player.dateOfBirth} in {player.state}
                             </span>
-                                    {currentCoach.country}
+                                    {player.country}
                                 </p>
                             </Col>
                         </Row>
@@ -84,11 +85,6 @@ const CoachProfileComponent = ({ currentUser, currentCoach, signOutStart, histor
                                     <h3>Feeds</h3>
                                 </Link>
                             </Col>
-                            <Col>
-                                <a href="#" className="post">
-                                    <h3 onClick={logout}>Sign out</h3>
-                                </a>
-                            </Col>
                         </Row>
                         <Row>
                             {
@@ -105,12 +101,4 @@ const CoachProfileComponent = ({ currentUser, currentCoach, signOutStart, histor
     );
 }
 
-const mapStateToProps = createStructuredSelector({
-    currentUser: selectCurrentUser,
-    currentCoach: selectCurrentCoach,
-});
-const mapDispatchToProps = dispatch => ({
-    signOutStart: () => dispatch(signOutStart()),
-});
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CoachProfileComponent));
+export default TalentProfileComponent;

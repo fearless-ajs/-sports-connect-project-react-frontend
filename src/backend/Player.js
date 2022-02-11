@@ -34,6 +34,14 @@ class Player extends Api{
     fetchPlayerPrimaryProfile = async () => {
         return await axios.get(`${this.endPoint()}/players`,{ withCredentials: true });
     }
+
+    fetchAllPlayers = async () => {
+        return await axios.get(`${this.endPoint()}/players/active/all`,{ withCredentials: true });
+    }
+
+    fetchPlayerProfile = async (player_id) => {
+        return await axios.get(`${this.endPoint()}/players/active/view/${player_id}`,{ withCredentials: true });
+    }
 }
 
 export default new Player;

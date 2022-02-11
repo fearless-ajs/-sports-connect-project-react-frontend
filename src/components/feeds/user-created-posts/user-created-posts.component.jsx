@@ -1,18 +1,34 @@
-import React, {useEffect} from "react";
-import { connect } from "react-redux";
-import { selectCurrentUser } from "../../../redux/user/user.selectors";
-import { createStructuredSelector } from "reselect";
-import { fetchUserPostsStart } from "../../../redux/post/post.actions";
-import { selectAllUserPosts, selectUserPostsFetchingStatus } from "../../../redux/post/post.selectors";
+import React, {useEffect, useState} from "react";
 import FeedComponentComponent from "../feed-component-component/feed-component.component";
+import Post from "../../../backend/Post";
 
-const UserCreatedPostsComponent = ({ currentUser, fetchUserPosts, userPosts, isUserPostsFetching }) => {
+// SweetAlert
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+const notify = withReactContent(Swal);
+
+const UserCreatedPostsComponent = ({ userId }) => {
+    const [posts, setPosts] = useState(null);
 
     useEffect(async () => {
-        if (userPosts.length === 0){
-            fetchUserPosts(currentUser.user._id)
+        if (!posts){
+          await fetchUserPosts();
         }
-    }, [fetchUserPosts]);
+    }, [posts]);
+
+    const fetchUserPosts = async () => {
+       await Post.fetchAllUserPosts(userId).then(response => {
+          setPosts(response.data.data.data);
+       }).catch(error => {
+           notify.fire({
+               icon: 'error',
+               title: 'Posts Error',
+               text: 'Unable to fetch posts',
+               showConfirmButton: true,
+               confirmButtonColor: '#00a01e',
+           });
+       });
+    }
 
     return (
         <div
@@ -26,26 +42,15 @@ const UserCreatedPostsComponent = ({ currentUser, fetchUserPosts, userPosts, isU
             }}
         >
             {
-                (!isUserPostsFetching)?
-                    userPosts.map(post => (
-                        <FeedComponentComponent  post={post}/>
+                (posts)?
+                    posts.map(post => (
+                        <FeedComponentComponent post={post} />
                     ))
                     :
-                    <h5>Fetching your posts.....</h5>
+                    <h5>Fetching user posts.....</h5>
             }
-
-
         </div>
     );
 }
 
-
-const mapStateToProps = createStructuredSelector({
-    currentUser: selectCurrentUser,
-    userPosts: selectAllUserPosts,
-    isUserPostsFetching: selectUserPostsFetchingStatus
-});
-const mapDispatchToProps = dispatch => ({
-    fetchUserPosts: userId => dispatch(fetchUserPostsStart(userId)),
-});
-export default connect(mapStateToProps, mapDispatchToProps)(UserCreatedPostsComponent);
+export default UserCreatedPostsComponent;

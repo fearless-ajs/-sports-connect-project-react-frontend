@@ -17,10 +17,11 @@ function CoachFeedsTopRightNavBar({ currentUser }) {
           alt=""
           className="chatlogo"
         />
-          <h4>
-              Bookings
+          <h4 style={{ cursor: "pointer" }} onClick={() => history.push('/talent-pool')}>
+              Talents
           </h4>
 
+       {/*Notification for accepted or rejected interview requests*/}
         <a href="">
           <img
             src={notification}

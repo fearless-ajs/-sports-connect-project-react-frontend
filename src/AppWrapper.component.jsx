@@ -28,6 +28,8 @@ import GuestRoute from "./components/auth/routes/guest-route";
 import AuthRoute from "./components/auth/routes/auth-route";
 import PlayerRoute from "./components/auth/routes/player-route";
 import CoachRoute from "./components/auth/routes/coach-route";
+import TalentPoolPage from "./pages/talent/talent-pool.page";
+import TalentProfilePage from "./pages/talent/talent-profile.page";
 
 
 const AppWrapper = ({ currentUser, history }) => {
@@ -48,6 +50,8 @@ const AppWrapper = ({ currentUser, history }) => {
 
             <CoachRoute exact path="/coach-profile" component={CoachProfilePage} />
             <CoachRoute exact path="/update-coach-profile" component={UpdateCoachProfilePage} />
+            <CoachRoute exact path="/talent-pool" component={TalentPoolPage} />
+            <CoachRoute exact path="/talent/:player_id" component={TalentProfilePage} />
 
             <PlayerRoute exact path="/player-profile" component={PlayerProfilePage} />
             <PlayerRoute exact path="/update-player-profile" component={UpdatePlayerProfilePage} />
