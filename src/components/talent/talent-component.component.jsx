@@ -2,7 +2,10 @@ import React from 'react';
 import {Button, Card} from "react-bootstrap";
 import System from "../../backend/System";
 import history from "../../history";
-import coachimg from "../../media/coachimg.png";
+import { connect } from "react-redux";
+import bookTalentStart from '../../redux/booking/booking.actions'
+import {createStructuredSelector} from "reselect";
+import {selectBookingLoadingStatus} from "../../redux/booking/booking.selectors";
 
 
 const TalentComponentComponent = ({ talent }) => {
@@ -84,4 +87,10 @@ const TalentComponentComponent = ({ talent }) => {
   );
 };
 
-export default TalentComponentComponent
+const mapDispatchToProps = dispatch => ({
+   bookTalent: receiverId => dispatch(bookTalentStart(receiverId)),
+});
+const mapStateToProps = createStructuredSelector({
+   isLoading: selectBookingLoadingStatus
+});
+export default connect(mapStateToProps, mapDispatchToProps)(TalentComponentComponent)

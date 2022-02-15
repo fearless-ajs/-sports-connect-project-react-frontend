@@ -10,6 +10,7 @@ import playerReducer from "./player/playerReducer";
 import postReducer from "./post/postReducer";
 import coachReducer from "./coach/coachReducer";
 import routingReducer from "./routing/routingReducer";
+import bookingReducer from "./booking/bookingReducer";
 
 const persistConfig = {
     key: 'root',
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
     contact: contactReducer,
     player: playerReducer,
     post: postReducer,
-    coach: coachReducer
+    coach: coachReducer,
+    booking: bookingReducer
 });
 
 export default persistReducer(persistConfig, rootReducer);

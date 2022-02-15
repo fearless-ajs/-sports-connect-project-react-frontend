@@ -5,6 +5,7 @@ import { contactSagas } from "./newsletter/contact.sagas";
 import { playerSagas } from "./player/player.sagas";
 import { postSagas } from "./post/post.sagas";
 import {coachSagas} from "./coach/coach.sagas";
+import { bookingSagas } from "./booking/booking.sagas";
 
 
 export default function* rootSaga() {
@@ -14,6 +15,7 @@ export default function* rootSaga() {
         call(contactSagas),
         call(playerSagas),
         call(postSagas),
-        call(coachSagas)
+        call(coachSagas),
+        call(bookingSagas)
     ])
 }
